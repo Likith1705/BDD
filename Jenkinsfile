@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-		    sh "chmod +x ./behave.sh"
-                sh "./behave.sh"
+		    sh "chmod +x ./likith.sh"
+                sh "./likith.sh"
 	    }
         }
     }
