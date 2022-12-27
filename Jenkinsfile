@@ -1,14 +1,19 @@
-pipeline{
-  agent any
-  stages{
-    stage(BDD){
-      steps{
-        echo "BDD testing"
-        sh “chmod +x ./behave.sh”
-        sh “./behave.sh”
-      }
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Installing Dependencies..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+		    sh "chmod +x ./tsh_init.sh"
+                sh "./tsh_init.sh"
+	    }
+        }
     }
-  }
 }
 
   
